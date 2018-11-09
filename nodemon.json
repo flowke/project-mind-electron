@@ -1,0 +1,7 @@
+{
+  "watch": [
+    "webpackConf/",
+    "webpackScript/",
+    "index.js"
+  ]
+}
