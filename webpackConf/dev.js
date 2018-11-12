@@ -5,7 +5,7 @@ const merge = require('webpack-merge')
 const CopyFile = require('copy-webpack-plugin')
 const NotifierPlugin = require('webpack-notifier')
 const IncludeAssets = require('html-webpack-include-assets-plugin')
-
+const paths = require('./path');
 
 const nodeEnv = process.env.NODE_ENV || 'development'
 
@@ -16,12 +16,13 @@ console.log(`当前环境变量 ======> ${nodeEnv}`)
 
 const config = merge(baseConfig, {
   entry: [
-    './src/index.js'
+    paths.src('index.js'),
   ],
   output: {
     filename: '[name].js'
   },
-  devtool: 'source-map',
+  mode: 'development',
+  // devtool: 'source-map',
 
   externals: {
     react: 'React',
@@ -29,13 +30,13 @@ const config = merge(baseConfig, {
   },
   module: {
     rules: [
-
+      
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: resolve(__dirname, '../index.html'),
+      template: paths.tmpl('index.html'),
     }),
     new CopyFile([
       {
@@ -58,7 +59,7 @@ const config = merge(baseConfig, {
     }),
     new NotifierPlugin({
       title: '编译完成...',
-      alwaysNotify,
+
 
     })
   ],
