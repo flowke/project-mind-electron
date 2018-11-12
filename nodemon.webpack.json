@@ -2,6 +2,7 @@
   "watch": [
     "webpackConf/",
     "webpackScript/",
+    "./devConfig.js",
     "./babelrc"
   ]
 }

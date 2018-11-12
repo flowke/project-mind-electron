@@ -16,14 +16,17 @@ module.exports = () => {
   ]
 
   const createCssLoader = function ([test, loader]) {
-    const use = ['vue-style-loader', 'css-loader', { loader: 'postcss-loader', options: { sourceMap: true } }]
+    const use = ['css-loader']
+    
+    if (loader !== 'css-loader') use.push(loader)
 
     if (isDev) {
-      if (loader !== 'css-loader') use.push(loader)
+      if (loader !== 'css-loader'){
+        use.push(loader)
+        use.unshift('style-loader')
+      } 
     } else {
-      use.shift()
-      use.shift()
-      if (loader !== 'css-loader') use.push(loader)
+      
       use.unshift(MiniCssExtractPlugin.loader, { loader: 'css-loader', options: { minimize: true } })
     }
 
