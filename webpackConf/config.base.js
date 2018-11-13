@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { resolve } = require('path')
 const baseLoaders = require('./libs/static.loader.js')
 const CopyFile = require('copy-webpack-plugin');
-const {paths} = require('../devConfig.js');
+const paths = require('./path');
 const pathTool = require('../utils/pathTool.js');
 
 
@@ -21,7 +21,10 @@ const config = {
     hints: false
   },
   resolve: {
-
+    alias: {
+      '@@common': paths.src('common'),
+      '@@comp': paths.src('components')
+    }
   },
   module: {
 

@@ -1,6 +1,7 @@
 import Index from './views/index';
 
 import 'antd/dist/antd.css';
+import '@@common/style/main.scss';
 
 ReactDOM.render(
   <Index className=""></Index>,

@@ -14,10 +14,10 @@ export default class extends React.Component{
       <Layout>
         <Sider
           theme="light"
-          width="50"
+          width="54"
         >
           <Menu>
-            <Menu.Item><Icon type="thunderbolt" /></Menu.Item>
+            <Menu.Item>ffffff<Icon type="thunderbolt" size="larger"/></Menu.Item>
           </Menu>
         </Sider>
       </Layout>

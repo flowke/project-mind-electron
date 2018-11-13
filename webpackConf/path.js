@@ -5,6 +5,7 @@ let root = (...a)=>resolve(__dirname, '../', ...a)
 module.exports = {
   root,
   tmpl: (...a) => root('pageSrc/htmls', ...a),
-  src: (...a) => root('pageSrc')
+  src: (...a) => root('pageSrc',...a)
 }
+
 

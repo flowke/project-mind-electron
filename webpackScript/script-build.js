@@ -18,7 +18,6 @@ if (isStat){
 
 const compiler = webpack(config);
 
-
 compiler.run((err, stats)=>{
 
   if (err) {

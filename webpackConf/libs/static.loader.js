@@ -21,13 +21,10 @@ module.exports = () => {
     if (loader !== 'css-loader') use.push(loader)
 
     if (isDev) {
-      if (loader !== 'css-loader'){
-        use.push(loader)
-        use.unshift('style-loader')
-      } 
+      use.unshift('style-loader')
     } else {
       
-      use.unshift(MiniCssExtractPlugin.loader, { loader: 'css-loader', options: { minimize: true } })
+      use.unshift(MiniCssExtractPlugin.loader)
     }
 
     return { test, use }
