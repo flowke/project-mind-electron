@@ -23,7 +23,9 @@ const config = {
   resolve: {
     alias: {
       '@@common': paths.src('common'),
-      '@@comp': paths.src('components')
+      '@@comp': paths.src('components'),
+      '@@layout': paths.src('layout'),
+      '@@views': paths.src('views'),
     }
   },
   module: {
